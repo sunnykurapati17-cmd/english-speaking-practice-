@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Speaking Practice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🎤 English Speaking Practice</h1>
+        <p>Speak in English, convert your speech to text, and receive instant practice feedback.</p>
+    </header>
+
+    <section class="card">
+        <h2>Practice Area</h2>
+        <textarea id="textInput" placeholder="Type your English sentence or click Start Speaking..."></textarea>
+
+        <div class="buttons">
+            <button id="startBtn" class="primary">🎙 Start Speaking</button>
+            <button id="stopBtn" class="danger" disabled>⏹ Stop</button>
+            <button id="analyzeBtn" class="secondary">🔍 Analyze</button>
+            <button id="clearBtn" class="light">🗑 Clear</button>
+        </div>
+
+        <p id="status">Ready to practice.</p>
+    </section>
+
+    <section class="card">
+        <h2>Practice Sentence</h2>
+        <div id="prompt" class="prompt"></div>
+        <button id="newPrompt" class="secondary">New Sentence</button>
+        <button id="speakPrompt" class="light">🔊 Listen</button>
+    </section>
+
+    <section id="results" class="card hidden">
+        <h2>Analysis Result</h2>
+
+        <div class="score-box">
+            <div class="score" id="overallScore">0</div>
+            <div>
+                <h3 id="level">-</h3>
+                <p>Overall Practice Score</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div><strong id="wordCount">0</strong><span>Words</span></div>
+            <div><strong id="sentenceCount">0</strong><span>Sentences</span></div>
+            <div><strong id="uniqueWords">0</strong><span>Unique Words</span></div>
+            <div><strong id="fillerCount">0</strong><span>Filler Words</span></div>
+        </div>
+
+        <div class="progress">
+            <label>Grammar</label>
+            <div><span id="grammarBar"></span></div>
+        </div>
+        <div class="progress">
+            <label>Vocabulary</label>
+            <div><span id="vocabBar"></span></div>
+        </div>
+        <div class="progress">
+            <label>Sentence Length</label>
+            <div><span id="lengthBar"></span></div>
+        </div>
+
+        <h3>💡 Suggestions</h3>
+        <ul id="tips"></ul>
+
+        <h3>📝 Your Text</h3>
+        <p id="resultText" class="result-text"></p>
+    </section>
+
+    <footer>
+        <p>English Speaking Practice Application | Python + Flask + Web Speech API</p>
+    </footer>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
